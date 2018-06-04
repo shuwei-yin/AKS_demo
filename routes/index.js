@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var fs = require("fs")
 
-var fs_output_data = ""
+var json_data = {}
 
 /* GET file content*/
 fs.readFile("./test_conf", 'utf-8', function(err, data){
@@ -10,14 +10,14 @@ fs.readFile("./test_conf", 'utf-8', function(err, data){
 		return console.log(err);
 	}
 	else{
-		fs_output_data = data;
+		json_data = JSON.parse(data);
 	}
 
 })
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	res.render('index', { name: 'Li Shan', 'fs_output_data': fs_output_data })
+	res.render('index', { user_name: json_data.username, 'password': json_data.password })
 });
 
 module.exports = router;
