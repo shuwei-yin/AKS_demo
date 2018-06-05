@@ -5,7 +5,7 @@ var fs = require("fs")
 var json_data = {}
 
 /* GET file content*/
-fs.readFile("/data/test_conf", 'utf-8', function(err, data){
+fs.readFileSync("/data/test_conf", 'utf-8', function(err, data){
 	if (err) {
 		return console.log(err);
 	}
