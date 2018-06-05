@@ -11,7 +11,8 @@ fs.readFile("/data/test_conf", 'utf-8', function(err, data){
 	}
 	else{
 		json_data = JSON.parse(data);
-		console.log("username========"+json_data.user_name)
+		var parse_data = JSON.parse(data);
+		console.log("username========"+parse_data.user_name)
 	}
 })
 
