@@ -10,16 +10,14 @@ fs.readFile("/data/test_conf", 'utf-8', function(err, data){
 		return console.log(err);
 	}
 	else{
-		json_data = JSON.parse(data);
 		var parse_data = JSON.parse(data);
 		console.log("username========"+parse_data.user_name)
+		/* GET home page. */
+		router.get('/', function(req, res, next) {
+			res.render('index', { user_name: parse_data.user_name, 'password': parse_data.password })
+		});
 	}
 })
 
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-	res.render('index', { user_name: json_data.user_name, 'password': json_data.password })
-});
 
 module.exports = router;
