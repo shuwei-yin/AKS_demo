@@ -3,9 +3,10 @@ var router = express.Router();
 var fs = require("fs")
 
 router.get('/*', function(req, res, next) {
-	res.header("Cache-Control", "no-cache, no-store, must-revalidate");
-    res.header("Pragma", "no-cache");
-    res.header("Expires", 0);
+	res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    res.setHeader("Pragma", "no-cache");
+    res.setHeader("Expires", 0);
+    res.setHeader('Last-Modified', (new Date()).toUTCString());
     next();
 });
 
