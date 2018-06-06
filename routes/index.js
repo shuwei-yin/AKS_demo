@@ -9,10 +9,11 @@ fs.readFile("/data/test_conf", 'utf-8', function(err, data){
 		return console.log(err);
 	}
 	var parse_data = JSON.parse(data);
-	console.log("username11========"+parse_data.user_name)
+	var cur_date = new Date().toISOString()
+	console.log("username11========"+data.user_name + "========date:"+ cur_date)
 	/* GET home page. */
 	router.get('/', function(req, res, next) {
-		res.render('index', { user_name: parse_data.user_name, 'password': parse_data.password })
+		res.render('index', { user_name: data.user_name, 'password': parse_data.password })
 	});
 })
 
