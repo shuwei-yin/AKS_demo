@@ -20,9 +20,11 @@ router.get('/', function(req, res, next) {
 		}
 		
 		console.log("username11========"+parse_data.user_name + "========date:"+ cur_date)
+		
+		res.render('index', { user_name: parse_data.user_name, 'password': parse_data.password })
 	})
+
 	
-	res.render('index', { user_name: parse_data.user_name, 'password': parse_data.password })
 	
 });
 
