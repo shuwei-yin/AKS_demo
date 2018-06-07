@@ -19,11 +19,14 @@ router.get('/', function(req, res, next) {
 		}
 		
 		var parse_data = JSON.parse(data);
-		var cur_date = new Date().toISOString()
-		
-		console.log("username11========"+parse_data.user_name + "========date:"+ cur_date)
 
-		res.render('index', { user_name: parse_data.user_name, 'password': parse_data.password })
+		console.log("username========"+parse_data.user_name)
+
+		res.render('index', { 
+			'user_name': parse_data.user_name, 
+			'password': parse_data.password,
+			'email': parse_data.email
+		})
 	})
 
 	
