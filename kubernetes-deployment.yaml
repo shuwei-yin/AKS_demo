@@ -48,7 +48,7 @@ spec:
           options:
             bucket: derrick-demo
             otherOpts: '-o max_stat_cache_size=0 -o allow_other'
-            akSecret: ObXCviJrKrtpvKmeQWpQLgJfP1Sbkb
-            akId: LTAIr80FW9ztR8UL
+            akSecret: **
+            akId: **
             url: oss-cn-hangzhou.aliyuncs.com
         
