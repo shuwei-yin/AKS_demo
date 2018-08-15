@@ -1,7 +1,7 @@
 pipeline {
    environment {
-     REGISTRY_ENDPOINT = "https://registry.cn-hangzhou.aliyuncs.com/v2/"
-     IMAGE_WITH_TAG = "registry.cn-hangzhou.aliyuncs.com/derrick_demo/derrick_demo:2.3"
+     REGISTRY_ENDPOINT = "https://registry.cn-beijing.aliyuncs.com/v2/"
+     IMAGE_WITH_TAG = "registry.cn-beijing.aliyuncs.com/derrick_demo/derrick_demo:1.0"
      REGISTRY_CERTS = "registry"
    }
   agent {

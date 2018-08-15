@@ -33,22 +33,7 @@ spec:
         derrick.service: aks-demo
     spec:
       containers:
-      - image: registry.cn-hangzhou.aliyuncs.com/derrick_demo/derrick_demo:latest
-        imagePullPolicy: Always
+      - image: registry.cn-beijing.aliyuncs.com/derrick_demo/derrick_demo:1.0
         name: web
         ports:
         - containerPort: 3000
-        volumeMounts:
-        - mountPath: /data
-          name: derrick-disk1
-      volumes:
-      - name: derrick-disk1
-        flexVolume:
-          driver: alicloud/oss
-          options:
-            bucket: derrick-demo
-            otherOpts: '-o max_stat_cache_size=0 -o allow_other'
-            akSecret: **
-            akId: **
-            url: oss-cn-hangzhou.aliyuncs.com
-        
