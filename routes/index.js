@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
     res.setHeader("Expires", 0);
     res.setHeader('Last-Modified', (new Date()).toUTCString());
 
-    res.render('index')
+    res.render('index', { title: 'Express' });
 
 	// fs.readFile("/data/test_conf", 'utf-8', function(err, data){
 	// 	if (err) {
