@@ -11,23 +11,23 @@ router.get('/', function(req, res, next) {
     res.setHeader("Expires", 0);
     res.setHeader('Last-Modified', (new Date()).toUTCString());
 
-    
+    res.render('index')
 
-	fs.readFile("/data/test_conf", 'utf-8', function(err, data){
-		if (err) {
-			return console.log(err);
-		}
+	// fs.readFile("/data/test_conf", 'utf-8', function(err, data){
+	// 	if (err) {
+	// 		return console.log(err);
+	// 	}
 		
-		var parse_data = JSON.parse(data);
+	// 	var parse_data = JSON.parse(data);
 
-		console.log("username========"+parse_data.user_name)
+	// 	console.log("username========"+parse_data.user_name)
 
-		res.render('index', { 
-			'user_name': parse_data.user_name, 
-			'password': parse_data.password,
-			'email': parse_data.email
-		})
-	})
+	// 	res.render('index', { 
+	// 		'user_name': parse_data.user_name, 
+	// 		'password': parse_data.password,
+	// 		'email': parse_data.email
+	// 	})
+	// })
 
 	
 	

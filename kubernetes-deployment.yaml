@@ -33,7 +33,7 @@ spec:
         derrick.service: aks-demo
     spec:
       containers:
-      - image: registry.cn-beijing.aliyuncs.com/derrick_demo/derrick_demo:1.0
+      - image: registry.cn-hangzhou.aliyuncs.com/derrick_demo/derrick_demo:4.1
         name: web
         ports:
         - containerPort: 3000
